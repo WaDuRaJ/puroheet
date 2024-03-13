@@ -1,15 +1,12 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavScrollExample from './components/Navbar';
-import LocationPicker from './components/location';
+import Homepage from './pages/home';
 
 function App() {
   return (
     <div>
-      <NavScrollExample/>
-      <LocationPicker/>
+      <Homepage/>  
     </div>
   )
 }
 
-export default App
+export default App;
