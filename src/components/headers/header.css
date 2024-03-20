@@ -6,7 +6,7 @@
 }
 
 .header-logo{
-  height: 27px;
+  max-width: 16px;
   max-width: 140px;
   margin-right: 24px;
 }
@@ -20,13 +20,13 @@
 }
 
 .header-location-search-container{
-  height: 54px;
+  height: 45px;
   display: flex;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 27px;
   box-shadow: black;
   border: 1px solid;
-  width: 70%;
+  width: 50%;
 }
 
 .location-wrapper{
@@ -82,11 +82,12 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  font-size: 35px;
 }
 
 .header-username{
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .profile-option-icon{
