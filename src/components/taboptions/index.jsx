@@ -19,14 +19,14 @@ const tabs=[
     id: 2,
     name: 'VIP Guide Priest',
     active_img: logo2,
-    backdrop: 'E5F3F3',
+    backdrop: '#E5F3F3',
     inactive_img: logo2_bw,
   },
   {
     id: 3,
     name: 'Vedic Calender',
     active_img: logo3,
-    backdrop: 'EDf4FF',
+    backdrop: '#EDf4FF',
     inactive_img: logo3_bw,
   }
 ] 
