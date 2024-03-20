@@ -7,7 +7,7 @@ import Dalal_booking from '../../components/dalal booking'
 import Vedic_calender from '../../components/vedic calender'
 
 const Homepage = () => {
-  const [activetab, setactivetab] = useState("vedic calender")
+  const [activetab, setactivetab] = useState("Book a Priest")
 
   return (
     <div>
@@ -20,11 +20,11 @@ const Homepage = () => {
 }
 const getscreen =(tab)=>{
   switch(tab) {
-    case "pooja booking":
+    case "Book a Priest":
       return <Pooja_booking />
-    case "dalal booking":
+    case "VIP Guide Priest":
       return <Dalal_booking />
-    case "vedic calender":
+    case "Vedic Calender":
       return <Vedic_calender />
     default:
       return <Pooja_booking />

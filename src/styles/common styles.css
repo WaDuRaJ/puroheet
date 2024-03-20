@@ -2,8 +2,13 @@
     max-width: 1450px;
     margin: 0px auto;
 }
+
 .absolute-center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.curser-pointer{
+    cursor: pointer;
 }
