@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './header.css'
-import logo from '../../assets/logo.png'
+import logo from '../assets/logo.png'
+import Pooja_booking from '../pooja booking'
+import Dalal_booking from '../dalal booking'
+import Vedic_calender from '../vedic calender'
+import Taboption from '../taboptions'
 
-const Header = () => {
+const getscreen =(tab)=>{
+  switch(tab) {
+    case "Book a Priest":
+      return <Pooja_booking />
+    case "VIP Guide Priest":
+      return <Dalal_booking />
+    case "Vedic Calender":
+      return <Vedic_calender />
+    default:
+      return <Pooja_booking />
+  }
+}
+
+const Navbar = () => {
+  const [activetab, setactivetab] = useState()
   return (
-    <div className='max-width header'>
+    <><div className='max-width header'>
       <img src={logo} alt='hlogo' className='header-logo' />
       <div className='header-right'>
         <div className='header-location-search-container'>
@@ -18,7 +36,7 @@ const Header = () => {
           <div className='location-search-separator'></div>
           <div className='header-searchbar'>
             <i className='fa-solid fa-magnifying-glass absolute-center search-icon'></i>
-            <input placeholder='search for pooja,religion or place' className='search-input'/>
+            <input placeholder='search for pooja,religion or place' className='search-input' />
           </div>
         </div>
         <div className='profile-wrapper'>
@@ -28,7 +46,10 @@ const Header = () => {
         </div>
       </div>
     </div>
+    <Taboption activetab={activetab} setactivetab={setactivetab} />
+      {getscreen(activetab)}
+    </>
   )
 }
 
-export default Header
+export default Navbar

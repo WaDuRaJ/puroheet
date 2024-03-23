@@ -1,12 +1,14 @@
 import React from 'react'
-import Homepage from './pages/home';
+import Navbar from './components/headers/index'
+import Footer from './components/footers'
 
 function App() {
   return (
     <div>
-      <Homepage/>  
+      <Navbar />
+      <Footer />
     </div>
   )
 }
 
-export default App;
+export default App

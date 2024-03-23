@@ -1,11 +1,11 @@
 import React from 'react'
 import './taboptions.css'
-import logo1 from '../../assets/book_priest_logo.png'
-import logo1_bw from '../../assets/book_priest_logo_bw.png'
-import logo2 from '../../assets/vip_guide_priest.png'
-import logo2_bw from '../../assets/vip_guide_priest_bw.png'
-import logo3 from '../../assets/vedic_calender.png'
-import logo3_bw from '../../assets/vedic_calender_bw.png'
+import logo1 from '../assets/book_priest_logo.png'
+import logo1_bw from '../assets/book_priest_logo_bw.png'
+import logo2 from '../assets/vip_guide_priest.png'
+import logo2_bw from '../assets/vip_guide_priest_bw.png'
+import logo3 from '../assets/vedic_calender.png'
+import logo3_bw from '../assets/vedic_calender_bw.png'
 
 const tabs=[
   {
@@ -35,8 +35,7 @@ const Taboption = ({activetab, setactivetab}) => {
   return (
     <div className='tab-options'>
       <div className='max-width options-wrapper'>
-        {tabs.map((tab) =>{
-          return (
+        {tabs.map((tab) =>{          return (
             <div onClick={()=> setactivetab(tab.name)} className= {`tab-item absolute-center curser-pointer ${activetab===tab.name &&'active-tab'}`}>
               <div className='tab-image-container absolute-center' style={{backgroundColor: `${activetab===tab.name ? tab.backdrop: ''}`}}>
                 <img className='tab-image' alt={tab.name} src={activetab===tab.name ? tab.active_img : tab.inactive_img}/>
