@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const { body, validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const jwtSecret = "ItisOurFinalYearEngineeringProject2024!@#$%^&*"
 
 router.post("/loginuser",
     [
@@ -19,11 +22,21 @@ router.post("/loginuser",
         if (!userData) {
             return res.status(400).json({ errors: "try logging with correct credentials" })
         }
-        if (req.body.password !== userData.password) {
+
+        const pdCompare = await bcrypt.compare(req.body.password,userData.password)
+        if (!pdCompare) {
             return res.status(400).json({ errors: "try logging with correct credentials" })
         }
 
-        return res.json({ success: true })
+        const data = {
+            user:{
+                id:userData.id
+            }
+        }
+
+        const authToken = jwt.sign(data,jwtSecret)
+
+        return res.json({ success: true,authToken: authToken })
     }
     catch (error) {
       console.log(error);
