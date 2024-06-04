@@ -6,7 +6,6 @@ import Dalal_booking from '../../pages/dalal booking'
 import Vedic_calender from '../../pages/vedic calender'
 import Taboption from '../taboptions'
 import { Link } from 'react-router-dom'
-import Signup from '../../pages/login/Signup'
 
 const getscreen =(tab)=>{
   switch(tab) {

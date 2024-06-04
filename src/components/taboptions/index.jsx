@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './taboptions.css'
 import logo1 from '../assets/book_priest_logo.png'
 import logo1_bw from '../assets/book_priest_logo_bw.png'
