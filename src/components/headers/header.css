@@ -78,14 +78,12 @@
   align-items: center;
 }
 
-.header-profile-image {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  font-size: 35px;
+.login-button{
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.header-username{
+.signup-button{
   font-size: 16px;
   font-weight: bold;
 }

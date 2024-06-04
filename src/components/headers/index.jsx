@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './header.css'
 import logo from '../assets/logo.png'
-import Pooja_booking from '../pooja booking'
-import Dalal_booking from '../dalal booking'
-import Vedic_calender from '../vedic calender'
+import Pooja_booking from '../../pages/pooja booking'
+import Dalal_booking from '../../pages/dalal booking'
+import Vedic_calender from '../../pages/vedic calender'
 import Taboption from '../taboptions'
+import { Link } from 'react-router-dom'
+import Signup from '../../pages/login/Signup'
 
 const getscreen =(tab)=>{
   switch(tab) {
@@ -20,7 +22,7 @@ const getscreen =(tab)=>{
 }
 
 const Navbar = () => {
-  const [activetab, setactivetab] = useState()
+  const [activetab, setactivetab] = useState("Book a Priest")
   return (
     <><div className='max-width header'>
       <img src={logo} alt='hlogo' className='header-logo' />
@@ -40,8 +42,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className='profile-wrapper'>
-          <i className='fa-solid fa-user-large header-profile-image'></i>
-          <div className='header-username'>rajdeep</div>
+          <button className='login-button-container'>
+            <Link className='login-button' to='/signup' >Signup</Link>
+          </button>
+          <button className ='login-button-container'>
+            <Link className='login-button' to='/login' >Login</Link>
+          </button>
           <i className='fa-solid fa-angle-down absolute-center profile-option-icon'></i>
         </div>
       </div>
