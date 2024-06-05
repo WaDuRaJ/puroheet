@@ -23,6 +23,16 @@ app.use('/api', require("./Routes/CreateUser"));
 
 app.use('/api', require("./Routes/LoginUser"));
 
+// app.get('/api/events', (req, res) => {
+//   eventsCollection.find().toArray((err, data) => {
+//     if (err) {
+//       res.status(500).send(err);
+//     } else {
+//       res.send(data);
+//     }
+//   });
+// });
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
