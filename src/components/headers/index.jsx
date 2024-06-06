@@ -5,7 +5,7 @@ import Pooja_booking from '../../pages/pooja booking'
 import Dalal_booking from '../../pages/dalal booking'
 import Vedic_calender from '../../pages/vedic calender'
 import Taboption from '../taboptions'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const getscreen =(tab)=>{
   switch(tab) {
@@ -21,7 +21,17 @@ const getscreen =(tab)=>{
 }
 
 const Navbar = () => {
+
   const [activetab, setactivetab] = useState("Book a Priest")
+
+  const navigate = useNavigate();
+
+  const handleLogout = ()=>{
+    localStorage.removeItem("authToken");
+    navigate("/login")
+  }
+
+  
   return (
     <><div className='max-width header'>
       <img src={logo} alt='hlogo' className='header-logo' />
@@ -40,6 +50,7 @@ const Navbar = () => {
             <input placeholder='search for pooja,religion or place' className='search-input' />
           </div>
         </div>
+        {(!localStorage.getItem("authToken")) ?
         <div className='profile-wrapper'>
           <button className='login-button-container'>
             <Link className='login-button' to='/signup' >Signup</Link>
@@ -49,6 +60,13 @@ const Navbar = () => {
           </button>
           <i className='fa-solid fa-angle-down absolute-center profile-option-icon'></i>
         </div>
+        :
+        <div>
+          <button className ='login-button-container' onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+        }
       </div>
     </div>
     <Taboption activetab={activetab} setactivetab={setactivetab} />

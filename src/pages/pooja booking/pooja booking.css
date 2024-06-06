@@ -1,0 +1,17 @@
+.cardss {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tittlename {
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px 0;
+    line-height: 1.2;
+    letter-spacing: 2px;
+  }

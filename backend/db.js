@@ -6,7 +6,12 @@ const mongoDB =async() =>{
             else {
                 console.log("connected");
                 const eventsCollection  = await mongoose.connection.db.collection("events");
+                eventsCollection.find({}).toArray(function( err, data){
+                    if (err) console.log(err);
+                    else console.log(data);
+                })
             }
+        
     });
 
 }
